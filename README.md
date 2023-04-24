@@ -66,6 +66,12 @@ Combination of `client:build:deploy` and `cloudfront:invalidateCache` commands w
 
 Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or without confirmation.
 
+## Task 2.1
+
+### [bucket](https://firstbucketcahv.s3.amazonaws.com/index.html)
+### [cloudfront](https://dv0d23oho8e0o.cloudfront.net/)
+
+
 ### `serverless:remove`
 
 Remove an entire stack configured in `serverless.yml` via CloudFormation.
