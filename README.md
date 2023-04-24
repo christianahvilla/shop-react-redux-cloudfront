@@ -71,6 +71,27 @@ Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or
 ### [bucket](https://firstbucketcahv.s3.amazonaws.com/index.html)
 ### [cloudfront](https://dv0d23oho8e0o.cloudfront.net/)
 
+## Task 2.2
+
+### [bucket](https://my-fea-app.s3.amazonaws.com/index.html)
+
+### [cloudfront](https://d14ls938utnzwc.cloudfront.net)
+
+### `cloudfront:build:deploy:sync:invalidate:domain`,
+
+Combination of
+
+#### `npm run build`
+
+#### `cloudfront:setup`
+
+#### `cloudfront:sync`
+
+#### `cloudfront:invalidateCache`
+
+#### `cloudfront:domainInfo`
+
+
 
 ### `serverless:remove`
 
