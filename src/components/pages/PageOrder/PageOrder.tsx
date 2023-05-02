@@ -68,7 +68,7 @@ export default function PageOrder() {
     return [];
   }, [order, products]);
 
-  if (isOrderLoading || isProductsLoading) return <p>loading...</p>;
+  if (isOrderLoading || isProductsLoading) return <p>Cargando....</p>;
 
   const statusHistory = order?.statusHistory || [];
 

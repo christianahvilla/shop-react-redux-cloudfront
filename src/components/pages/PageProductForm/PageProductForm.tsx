@@ -45,7 +45,7 @@ export default function PageProductForm() {
         {id ? "Edit product" : "Create new product"}
       </Typography>
       {isLoading ? (
-        <>Loading...</>
+        <>Cargando....</>
       ) : (
         <Formik
           initialValues={data ?? initialValues}
