@@ -4,28 +4,20 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useEffect, useState } from "react";
 
 export interface RootObject {
-  limit: number;
-  products: Array<Product>;
-  skip: number;
+  products: Product[];
   total: number;
 }
 
 export interface Product {
-  brand: string;
-  category: string;
+  count: number;
   description: string;
-  discountPercentage: number;
-  id: number;
-  images: string[];
+  id: string;
+  image: string;
   price: number;
-  rating: number;
-  stock: number;
-  thumbnail: string;
   title: string;
 }
 
@@ -40,9 +32,7 @@ export default function Products() {
   }, []);
 
   const getApiData = async () => {
-    const response = await fetch(
-      "https://lrq0pa2b0l.execute-api.us-east-1.amazonaws.com/dev/products"
-    )
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/products`)
       .then((response) => {
         setIsLoading(false);
         return response.json();
@@ -66,7 +56,7 @@ export default function Products() {
           >
             <CardMedia
               sx={{ pt: "56.25%" }}
-              image={product.thumbnail}
+              image={product.image}
               title="Image title"
             />
             <CardContent sx={{ flexGrow: 1 }}>
@@ -76,7 +66,7 @@ export default function Products() {
               <Typography>{`$${product.price}`}</Typography>
             </CardContent>
             <CardActions>
-              <AddProductToCart product={product as any} />
+              <AddProductToCart product={product} />
             </CardActions>
           </Card>
         </Grid>
